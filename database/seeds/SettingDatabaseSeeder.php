@@ -24,10 +24,10 @@ class SettingDatabaseSeeder extends Seeder
             'outer_shipping_cost' => 0,
             'free_shipping_cost' => 0,
             'translatable' => [
-                'store_name' => 'Emamy store',
-                'free_shipping_label' => 'Free Shipping',
-                'local_label' => 'Local shipping',
-                'outer_label' => 'outer shipping',
+                'store_name' => 'متجر الامام',
+                'free_shipping_label' => 'يوصيل مجاني',
+                'local_label' => 'توصيل داخلي',
+                'outer_label' => 'توصل خارجي',
             ],
         ]);
     }
