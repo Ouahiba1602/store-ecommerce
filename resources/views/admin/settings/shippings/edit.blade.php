@@ -42,15 +42,13 @@
                                 @include('admin.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('edit.shipping.methods', '$shippingMethod -> id')}}"
+                                        <form class="form" action="{{route('update.shipping.methods', $shippingMethod -> id)}}"
                                               method="post"
                                               enctype="multipart/form-data">
                                             @csrf
                                               @method('PUT')
                                             <input type="hidden" name="id" value="{{$shippingMethod -> id}}">
 
-                                            <input type="hidden"  value="" id="latitude" name="latitude">
-                                            <input type="hidden" value="" id="longitude"  name="longitude">
 
                                             <div class="form-body">
 
@@ -63,8 +61,8 @@
                                                             <input type="text" value="{{$shippingMethod -> value}}" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   name="name">
-                                                            @error("name")
+                                                                   name="value">
+                                                            @error("value")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -75,7 +73,7 @@
                                                        <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> قيمة التوصيل </label>
-                                                            <input type="number" value="{{$shippingMethod -> value}}" id="plan_value"
+                                                            <input type="number" value="{{$shippingMethod -> plain_value}}" id="plain_value"
                                                                    class="form-control"
                                                                    placeholder="  "
                                                                    name="plain_value">
