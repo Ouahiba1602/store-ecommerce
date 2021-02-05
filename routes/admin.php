@@ -23,6 +23,8 @@ Route::group(
 
         Route::get('/', 'DashboardController@index')->name('admin.dashboard'); //the first page admin visit's if authenticated
 
+        Route::get('logout', 'LoginController@logout') -> name('admin.logout');
+
         Route::group(['prefix' => 'Settings'], function () {
             Route::get('shipping-methods/{type}', 'SettingsController@editShippingMethods')->name('edit.shipping.methods');
             Route::put('shipping-methods/{id}', 'SettingsController@updateShippingMethods')->name('update.shipping.methods');
