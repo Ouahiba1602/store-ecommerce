@@ -47,7 +47,7 @@
                                               enctype="multipart/form-data">
                                             @csrf
                                               @method('PUT')
-                                            <input type="hidden" name="id" value="{{$shippingMethod -> id}}">
+                                             <input type="hidden" name="id" value="{{$shippingMethod -> id}}">
 
 
                                             <div class="form-body">
