@@ -41,7 +41,7 @@ Route::group(
       ################################## categories routes #################################################
        Route::group(['prefix' => 'main_categories'], function (){
            Route::get('/', 'MainCategoriesController@index') -> name('admin.maincategories');
-           Route::get('create', 'MainCategoriesController@index') -> name('admin.maincategories.create');
+           Route::get('create', 'MainCategoriesController@create') -> name('admin.maincategories.create');
            Route::post('store', 'MainCategoriesController@store') -> name('admin.maincategories.store');
            Route::get('edit/{id}', 'MainCategoriesController@edit') -> name('admin.maincategories.edit');
            Route::put('update/{id}', 'MainCategoriesController@update') -> name('admin.maincategories.update');
@@ -50,16 +50,31 @@ Route::group(
        });
         ################################### end categories routes ##################################################
 
+
+        ################################### subcategories routes ##################################################
         Route::group(['prefix' => 'sub_categories'], function (){
             Route::get('/', 'SubCategoriesController@index') -> name('admin.subcategories');
-            Route::get('create', 'SubCategoriesController@index') -> name('admin.subcategories.create');
+            Route::get('create', 'SubCategoriesController@create') -> name('admin.subcategories.create');
             Route::post('store', 'SubCategoriesController@store') -> name('admin.subcategories.store');
             Route::get('edit/{id}', 'SubCategoriesController@edit') -> name('admin.subcategories.edit');
             Route::put('update/{id}', 'SubCategoriesController@update') -> name('admin.subcategories.update');
             Route::get('delete/{id}', 'SubCategoriesController@destroy') -> name('admin.subcategories.delete');
             Route::get('changeStatus/{id}', 'SubCategoriesController@changeStatus') -> name('admin.subcategories.status');
         });
-        ################################### end categories routes ##################################################
+        ################################### end subcategories routes ##################################################
+
+        ################################### brands routes ##################################################
+        Route::group(['prefix' => 'brands'], function (){
+            Route::get('/', 'brandsController@index') -> name('admin.brands');
+            Route::get('create', 'brandsController@create') -> name('admin.brands.create');
+            Route::post('store', 'brandsController@store') -> name('admin.brands.store');
+            Route::get('edit/{id}', 'brandsController@edit') -> name('admin.brands.edit');
+            Route::put('update/{id}', 'brandsController@update') -> name('admin.brands.update');
+            Route::get('delete/{id}', 'brandsController@destroy') -> name('admin.brands.delete');
+            Route::get('changeStatus/{id}', 'brandsController@changeStatus') -> name('admin.brands.status');
+        });
+        ################################### end brands routes ##################################################
+
 
 
     });

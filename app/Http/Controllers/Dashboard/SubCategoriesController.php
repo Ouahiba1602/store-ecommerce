@@ -117,7 +117,7 @@ class SubCategoriesController extends Controller
         }
        }
 
-    public function changeStatus(){}
+  //  public function changeStatus(){}
 
 
 }
